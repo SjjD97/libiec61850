@@ -176,7 +176,7 @@ BerDecoder_decodeInt32(uint8_t* buffer, int intlen, int bufPos)
     bool isNegative = ((buffer[bufPos] & 0x80) == 0x80);
 
     if (isNegative)
-        value = -0xffffffff; /* initialize to all 1s for -1 */
+        value = 0xffffffff; /* initialize to all 1s for sign extension */
     else
         value = 0;
 
